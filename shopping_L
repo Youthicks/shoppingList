@@ -1,0 +1,35 @@
+lst = []
+
+class Product:
+    def __init__(self, name, price, link):
+        self.name = name
+        self.price = price
+        self.link = link
+
+    def __repr__(self):
+        return f"Item: {self.name}\nPrice: ${self.price}\nURL: {self.link}\n"
+
+
+def full_list(l=None):
+    if l is None:
+        l = lst
+    for i in l:
+        print(i)
+
+
+while True:
+    itemN = input("What is the name of the product? ")
+    itemP = float(input("What is the price of this product? "))
+    itemL = input("Please provide the link to this product: ")
+    product = Product(itemN, itemP, itemL)
+    lst.append(product)
+    cont = input("Would you like to add another item? (y or n): ").lower()
+    if cont == "y":
+        pass
+    elif cont == "n":
+        print("Here is your shopping list:\n")
+        full_list()
+        break
+    else:
+        print("Please enter a valid response.")
+        cont = input("Would you like to add another item? (y or n): ").lower()
