@@ -1,5 +1,6 @@
 lst = []
 
+
 class Product:
     def __init__(self, name, price, link):
         self.name = name
